@@ -1,0 +1,76 @@
+<!DOCTYPE>
+<html>
+
+<head>
+    <title>Yahoo Finance Tickder (Ajax/API Intro)</title>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" type="text/css" href="footables/css/footable.core.css" />
+    <link rel="stylesheet" type="text/css" href="footables/css/footable.standalone.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+
+<body>
+    <div id="header">
+        <div id="what-ticker">
+            What ticker do you want to search for ?
+        </div>
+        <form class="w3-container" id="ticker-search">
+            <input class="w3-input w3-border w3-round-xlarge w3-medium" type="text" id="symbol" placeholder="e.g. GooG" name="symbol">
+            <input class="w3-btn w3-teal w3-round-xlarge w3-medium" type="submit" value="Add a Quote">
+        </form>
+    </div>
+    <div id="stock-details">
+        <label class="w3-label w3-text-blue"><b>Filter</b></label>
+        <input class="w3-input w3-border w3-text-blue" type="text" id="filter" placeholder="e.g. 'ticker name'">
+        <table border="1" class="footable table" data-filter="#filter" data-page-navigation=".pagination" data-page-size="10">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Stock Symbol</th>
+                    <th data-type="numeric" data-sort-initial="true">Ask Price</th>
+                    <th data-type="numeric" data-sort-initial="true">Daily Change</th>
+                    <th data-type="numeric" data-sort-initial="true">Day High</th>
+                </tr>
+            </thead>
+            <tbody id="ticker-body">
+
+            </tbody>
+            <tfoot class="hide-if-no-paging">
+                <tr>
+                    <td colspan="5">
+                        <div class="pagination pagination-centered"></div>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="chart">
+            <div>
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="footables/js/footable.js"></script>
+    <script src="footables/js/footable.sort.js"></script>
+    <script src="footables/js/footable.filter.js"></script>
+    <script src="footables/js/footable.paginate.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
+
+<!--, {
+                label: "My Second dataset",
+                fillColor: "rgba(151,187,205,0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor(), randomScalingFactor()]
+            }-->
